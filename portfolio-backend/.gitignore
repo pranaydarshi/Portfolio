@@ -1,0 +1,28 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.log
+
+## EF Core migrations auto-generated files (keep Migrations folder, not snapshots you don't need)
+# If you want to keep migrations in git, remove the line below.
+# src/**/Migrations/
+
+## Sensitive config — NEVER commit real credentials
+appsettings.Development.json
+appsettings.Production.json
+*.pfx
+*.p12
+secrets.json
+
+## SQLite local dev database
+*.db
+*.db-shm
+*.db-wal
+
+## Rider / VS Code
+.idea/
+.vscode/
+*.DS_Store

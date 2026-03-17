@@ -1,0 +1,157 @@
+.panel {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem 3rem 3rem;
+  overflow: hidden;
+  border-right: 1px solid var(--color-border);
+}
+
+/* ── Identity ──────────────────────────────── */
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.logoBtn {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.logoBtn:hover { opacity: 0.75; }
+
+.logoDot {
+  color: var(--color-purple);
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 2.4vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: var(--color-text);
+}
+
+.role {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
+}
+
+.tagline {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 240px;
+}
+
+/* ── Navigation ─────────────────────────────── */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.45rem 0;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  transition: color 0.25s ease;
+}
+
+.navLine {
+  height: 1px;
+  width: 32px;
+  background: var(--color-text-faint);
+  flex-shrink: 0;
+  transition: width 0.3s ease, background 0.25s ease;
+}
+
+.navLabel {
+  transition: color 0.25s ease;
+}
+
+/* Active state */
+.navItem.active,
+.navItem:hover {
+  color: var(--color-text);
+}
+
+.navItem.active .navLine,
+.navItem:hover .navLine {
+  width: 64px;
+  background: var(--color-accent);
+}
+
+/* ── Bottom (socials + availability) ─────────── */
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.socialLink {
+  color: var(--color-text-faint);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.socialLink:hover {
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.availDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  flex-shrink: 0;
+  animation: pulse 2.5s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 8px #22c55e; opacity: 1; }
+  50%       { box-shadow: 0 0 16px #22c55e; opacity: 0.7; }
+}

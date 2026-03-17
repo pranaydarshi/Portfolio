@@ -1,0 +1,32 @@
+.dot {
+  position: fixed;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: screen;
+}
+
+.ring {
+  position: fixed;
+  top: -18px;
+  left: -18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0, 212, 255, 0.45);
+  pointer-events: none;
+  z-index: 99998;
+}
+
+/* Hide on touch devices */
+@media (pointer: coarse) {
+  .dot,
+  .ring {
+    display: none;
+  }
+}

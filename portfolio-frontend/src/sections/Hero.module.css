@@ -1,0 +1,188 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 4rem 5rem;
+  position: relative;
+}
+
+.inner {
+  width: 100%;
+  max-width: 620px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Availability badge ─────────────────────── */
+.availBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem 0.35rem 0.6rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  background: rgba(34, 197, 94, 0.07);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #4ade80;
+  margin-bottom: 1.75rem;
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+}
+
+.availDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  flex-shrink: 0;
+  animation: dotPulse 2.5s ease infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 6px #22c55e; }
+  50%       { box-shadow: 0 0 14px #22c55e; }
+}
+
+/* ── Main headline ──────────────────────────── */
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.8vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--color-text-muted);
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+}
+
+/* ── Tagline word-reveal ────────────────────── */
+.taglineWrap {
+  margin-bottom: 1.75rem;
+}
+
+.tagline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.5rem;
+}
+
+.wordClip {
+  overflow: hidden;
+  display: inline-block;
+  line-height: 1.1;
+  padding-bottom: 0.06em;
+}
+
+.word {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #a78bfa 55%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Subtext ────────────────────────────────── */
+.subtext {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.78;
+  max-width: 580px;
+  margin-bottom: 2.25rem;
+}
+
+.subtext strong {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* ── CTA row ────────────────────────────────── */
+.ctaRow {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.25rem;
+}
+
+/* ── Tech badges ────────────────────────────── */
+.badgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Bento stats grid ───────────────────────── */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  max-width: 480px;
+}
+
+.bentoCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.4rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.bentoCard:hover {
+  border-color: rgba(0, 212, 255, 0.2);
+  background: rgba(0, 212, 255, 0.04);
+}
+
+.bentoNum {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.bentoLabel {
+  font-size: 0.7rem;
+  color: var(--color-text-faint);
+  letter-spacing: 0.05em;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1.5rem 3.5rem;
+    min-height: auto;
+  }
+
+  .bento {
+    max-width: 100%;
+  }
+
+  .ctaRow {
+    flex-direction: column;
+  }
+
+  .ctaRow > * {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

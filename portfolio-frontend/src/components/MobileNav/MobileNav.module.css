@@ -1,0 +1,162 @@
+/* Header strip — only visible on mobile */
+.header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  padding: 0 1.25rem;
+  height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+  }
+}
+
+/* Logo */
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.logo:hover { opacity: 0.75; }
+
+.logoDot { color: var(--color-accent); }
+
+/* Hamburger */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+}
+
+.hamburger:hover {
+  background: var(--color-surface-2);
+}
+
+.bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+  transform-origin: center;
+}
+
+/* Open state bars */
+.bar1Open {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.bar2Open {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.bar3Open {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Full-screen overlay */
+.overlay {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0a0a0f;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 2rem 3rem;
+  gap: 2rem;
+}
+
+/* Overlay nav */
+.overlayNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.overlayLink {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.6rem 0;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 7vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-text-faint);
+  transition: color 0.2s ease;
+  width: 100%;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.overlayLink:last-child {
+  border-bottom: none;
+}
+
+.overlayLink:hover,
+.overlayLinkActive {
+  color: var(--color-text);
+}
+
+.overlayNum {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  flex-shrink: 0;
+}
+
+/* Socials row in overlay */
+.overlaySocials {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--color-text-faint);
+}
+
+.overlaySocialLink {
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  transition: color 0.2s;
+}
+
+.overlaySocialLink:hover {
+  color: var(--color-accent);
+}

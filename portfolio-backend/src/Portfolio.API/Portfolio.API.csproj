@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Portfolio.API</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      API depends on Application for use cases and DTOs.
+      API references Infrastructure ONLY to wire up DI in Program.cs.
+      Controllers never import anything from Infrastructure directly.
+    -->
+    <ProjectReference Include="..\Portfolio.Application\Portfolio.Application.csproj" />
+    <ProjectReference Include="..\Portfolio.Infrastructure\Portfolio.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi"       Version="8.0.7" />
+    <PackageReference Include="Swashbuckle.AspNetCore"             Version="6.7.3" />
+    <!-- EF Tools referenced here so "dotnet ef" CLI works from the API project -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>

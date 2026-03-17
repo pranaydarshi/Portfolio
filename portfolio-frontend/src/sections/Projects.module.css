@@ -1,0 +1,211 @@
+.projects {
+  position: relative;
+  padding: var(--space-24) 0;
+}
+
+.inner {
+  padding: 0 4rem;
+  max-width: 760px;
+}
+
+.header {
+  margin-bottom: 4rem;
+}
+
+.accentText {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subheading {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 580px;
+}
+
+/* Card list */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Individual featured card */
+.card {
+  position: relative;
+  padding: 2.5rem 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+  will-change: transform;
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Decorative top glow */
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card:hover .cardGlow {
+  opacity: 1;
+}
+
+/* Card top row */
+.cardTop {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Large decorative project number */
+.projNum {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  color: rgba(255, 255, 255, 0.06);
+  line-height: 1;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.card:hover .projNum {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+/* Label pill */
+.projLabel {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid currentColor;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+/* Title */
+.projTitle {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.85rem;
+}
+
+/* Description */
+.projDesc {
+  position: relative;
+  z-index: 1;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+/* Highlights list */
+.highlights {
+  position: relative;
+  z-index: 1;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+.bullet {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 0.42em;
+  opacity: 0.7;
+}
+
+/* Outcome callout */
+.outcome {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.outcomeIcon {
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.outcome p {
+  font-size: 0.875rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Stack badges */
+.stackRow {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .inner {
+    padding: 0 1.5rem;
+    max-width: 100%;
+  }
+
+  .card {
+    padding: 1.75rem 1.5rem 1.5rem;
+  }
+}

@@ -1,0 +1,33 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.leftCol {
+  width: var(--left-panel-width);
+  flex-shrink: 0;
+  /* The inner LeftPanel uses position: sticky */
+}
+
+.rightCol {
+  width: var(--right-panel-width);
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .leftCol {
+    display: none;
+  }
+
+  .rightCol {
+    width: 100%;
+    padding-top: 64px; /* offset for fixed MobileNav */
+  }
+}

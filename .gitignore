@@ -1,0 +1,23 @@
+# Frontend
+portfolio-frontend/node_modules/
+portfolio-frontend/dist/
+portfolio-frontend/.env.local
+
+# Backend
+portfolio-backend/bin/
+portfolio-backend/obj/
+portfolio-backend/**/*.db
+portfolio-backend/**/*.db-shm
+portfolio-backend/**/*.db-wal
+portfolio-backend/src/Portfolio.API/appsettings.Development.json
+portfolio-backend/src/Portfolio.API/appsettings.Production.json
+
+# Claude Code session data
+.claude/
+
+# General
+.DS_Store
+*.log
+.vs/
+.idea/
+.vscode/
