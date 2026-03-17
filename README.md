@@ -112,4 +112,4 @@ git subtree push --prefix portfolio-backend heroku-backend master
 
 **Darshi Sai Pranay** — .NET Full Stack Developer
 📧 darshisaipranay@gmail.com
-🔗 [LinkedIn](https://linkedin.com/in/darshisaipranay) · [GitHub](https://github.com/pranaydarshi)
+🔗 [LinkedIn](https://www.linkedin.com/in/darshi-sai-pranay-410b51225/) · [GitHub](https://github.com/pranaydarshi)
