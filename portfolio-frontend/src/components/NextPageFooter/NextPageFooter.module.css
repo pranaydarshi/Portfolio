@@ -27,15 +27,15 @@
 }
 
 .inner {
-  padding: 3rem 4rem 4rem;
+  padding: 1.5rem 4rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.3rem;
 }
 
 .nextLabel {
   font-family: var(--font-body);
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-text-faint);
@@ -45,12 +45,12 @@
 .titleRow {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .nextTitle {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -67,7 +67,7 @@
 }
 
 .arrow {
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(1.2rem, 3vw, 2rem);
   color: var(--color-accent);
   line-height: 1;
   display: inline-block;
@@ -75,6 +75,6 @@
 
 @media (max-width: 768px) {
   .inner {
-    padding: 2.5rem 1.5rem 3rem;
+    padding: 1.25rem 1.5rem 1.75rem;
   }
 }
