@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import MagneticButton from '../components/MagneticButton/MagneticButton'
 import AnimatedCounter from '../components/AnimatedCounter/AnimatedCounter'
 import styles from './Hero.module.css'
@@ -40,11 +41,8 @@ const wordReveal = {
   show:   { y: '0%',   opacity: 1, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } }
 }
 
-function scrollTo(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-}
-
 export default function Hero() {
+  const navigate = useNavigate()
   return (
     <section id="hero" className={styles.hero}>
       <motion.div
@@ -95,7 +93,7 @@ export default function Hero() {
         <motion.div variants={fadeUp} className={styles.ctaRow}>
           <MagneticButton
             className="btn-primary"
-            onClick={() => scrollTo('contact')}
+            onClick={() => navigate('/contact')}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -106,7 +104,7 @@ export default function Hero() {
 
           <MagneticButton
             className="btn-outline"
-            onClick={() => scrollTo('projects')}
+            onClick={() => navigate('/projects')}
           >
             View Projects
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
