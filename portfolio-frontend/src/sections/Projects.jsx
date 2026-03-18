@@ -1,5 +1,7 @@
 import { useRef } from 'react'
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
+import SectionIntro from '../components/SectionIntro/SectionIntro'
+import NextPageFooter from '../components/NextPageFooter/NextPageFooter'
 import styles from './Projects.module.css'
 
 const PROJECTS = [
@@ -171,6 +173,8 @@ function ProjectCard({ proj, index }) {
 
 export default function Projects() {
   return (
+    <>
+    <SectionIntro num="03" label="Case Studies" title="Projects" subtitle="3 enterprise systems shipped to production." />
     <section id="projects" className={styles.projects}>
       <div className={styles.inner}>
         <motion.div
@@ -199,5 +203,7 @@ export default function Projects() {
         </div>
       </div>
     </section>
+    <NextPageFooter label="Skills" path="/skills" />
+    </>
   )
 }

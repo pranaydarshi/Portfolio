@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import MagneticButton from '../components/MagneticButton/MagneticButton'
 import AnimatedCounter from '../components/AnimatedCounter/AnimatedCounter'
+import NextPageFooter from '../components/NextPageFooter/NextPageFooter'
 import styles from './Hero.module.css'
 
 const TECH_BADGES = [
@@ -44,6 +45,7 @@ const wordReveal = {
 export default function Hero() {
   const navigate = useNavigate()
   return (
+    <>
     <section id="hero" className={styles.hero}>
       <motion.div
         className={styles.inner}
@@ -158,5 +160,7 @@ export default function Hero() {
         </motion.div>
       </motion.div>
     </section>
+    <NextPageFooter label="Services" path="/services" />
+    </>
   )
 }

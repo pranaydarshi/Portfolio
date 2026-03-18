@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import SectionIntro from '../components/SectionIntro/SectionIntro'
+import NextPageFooter from '../components/NextPageFooter/NextPageFooter'
 import styles from './Services.module.css'
 
 const SERVICES = [
@@ -78,6 +80,8 @@ const cardVariant = {
 
 export default function Services() {
   return (
+    <>
+    <SectionIntro num="02" label="What I Build" title="Services" subtitle="Enterprise-grade solutions across the full stack." />
     <section id="services" className={styles.services}>
       <div className={styles.inner}>
         <motion.div
@@ -131,5 +135,7 @@ export default function Services() {
         </motion.div>
       </div>
     </section>
+    <NextPageFooter label="Projects" path="/projects" />
+    </>
   )
 }

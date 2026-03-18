@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import SectionIntro from '../components/SectionIntro/SectionIntro'
+import NextPageFooter from '../components/NextPageFooter/NextPageFooter'
 import styles from './Skills.module.css'
 
 const SKILL_GROUPS = [
@@ -104,6 +106,8 @@ function SkillGroup({ group }) {
 
 export default function Skills() {
   return (
+    <>
+    <SectionIntro num="04" label="Capabilities" title="Skills" subtitle="Full-stack expertise across cloud, backend & frontend." />
     <section id="skills" className={styles.skills}>
       <div className={styles.inner}>
         <motion.div
@@ -167,5 +171,7 @@ export default function Skills() {
         </div>
       </div>
     </section>
+    <NextPageFooter label="Contact" path="/contact" />
+    </>
   )
 }

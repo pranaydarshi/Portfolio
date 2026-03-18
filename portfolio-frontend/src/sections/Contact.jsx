@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import useContactForm from '../hooks/useContactForm'
 import MagneticButton from '../components/MagneticButton/MagneticButton'
+import SectionIntro from '../components/SectionIntro/SectionIntro'
+import NextPageFooter from '../components/NextPageFooter/NextPageFooter'
 import styles from './Contact.module.css'
 
 export default function Contact() {
@@ -15,6 +17,8 @@ export default function Contact() {
   } = useContactForm()
 
   return (
+    <>
+    <SectionIntro num="05" label="Get in touch" title="Contact" subtitle="Let's build something great together." />
     <section id="contact" className={styles.contact}>
       <div className={styles.inner}>
         <div className={styles.grid}>
@@ -277,5 +281,7 @@ export default function Contact() {
         </div>
       </div>
     </section>
+    <NextPageFooter label="Back to Home" path="/" />
+    </>
   )
 }

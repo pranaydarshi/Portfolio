@@ -1,0 +1,80 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  margin-top: 4rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.fillBg {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 212, 255, 0.05);
+  transform-origin: bottom;
+  z-index: 0;
+}
+
+.topLine {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+  transform-origin: left;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.inner {
+  padding: 3rem 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nextLabel {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  display: block;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nextTitle {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--color-text);
+  display: block;
+  transition: background 0.3s;
+}
+
+.footer:hover .nextTitle {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #a78bfa 60%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.arrow {
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--color-accent);
+  line-height: 1;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: 2.5rem 1.5rem 3rem;
+  }
+}
