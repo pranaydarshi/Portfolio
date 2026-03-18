@@ -28,6 +28,8 @@
   transition: opacity 0.2s;
   margin-bottom: 1.5rem;
   text-align: left;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .logoBtn:hover { opacity: 0.75; }
@@ -83,6 +85,7 @@
   text-transform: uppercase;
   color: var(--color-text-faint);
   transition: color 0.25s ease;
+  text-decoration: none;
 }
 
 .navLine {

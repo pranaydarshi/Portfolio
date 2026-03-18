@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion'
+import { Link, useLocation } from 'react-router-dom'
 import styles from './LeftPanel.module.css'
 
 const NAV_ITEMS = [
-  { id: 'hero',     label: 'Home' },
-  { id: 'services', label: 'Services' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'skills',   label: 'Skills' },
-  { id: 'contact',  label: 'Contact' },
+  { label: 'Home',     path: '/' },
+  { label: 'Services', path: '/services' },
+  { label: 'Projects', path: '/projects' },
+  { label: 'Skills',   path: '/skills' },
+  { label: 'Contact',  path: '/contact' },
 ]
 
 const container = {
@@ -19,11 +20,9 @@ const item = {
   show:   { opacity: 1, x: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } }
 }
 
-function scrollTo(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-}
+export default function LeftPanel() {
+  const { pathname } = useLocation()
 
-export default function LeftPanel({ activeSection }) {
   return (
     <motion.aside
       className={styles.panel}
@@ -39,13 +38,9 @@ export default function LeftPanel({ activeSection }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}
         >
-          <button
-            className={styles.logoBtn}
-            onClick={() => scrollTo('hero')}
-            aria-label="Go to top"
-          >
+          <Link to="/" className={styles.logoBtn} aria-label="Go to home">
             DSP<span className={styles.logoDot}>.</span>
-          </button>
+          </Link>
         </motion.div>
 
         <motion.h1
@@ -84,18 +79,21 @@ export default function LeftPanel({ activeSection }) {
         animate="show"
         aria-label="Primary navigation"
       >
-        {NAV_ITEMS.map((navItem) => (
-          <motion.button
-            key={navItem.id}
-            variants={item}
-            className={`${styles.navItem} ${activeSection === navItem.id ? styles.active : ''}`}
-            onClick={() => scrollTo(navItem.id)}
-            aria-current={activeSection === navItem.id ? 'true' : undefined}
-          >
-            <span className={styles.navLine} aria-hidden="true" />
-            <span className={styles.navLabel}>{navItem.label}</span>
-          </motion.button>
-        ))}
+        {NAV_ITEMS.map((navItem) => {
+          const isActive = pathname === navItem.path
+          return (
+            <motion.div key={navItem.path} variants={item}>
+              <Link
+                to={navItem.path}
+                className={`${styles.navItem} ${isActive ? styles.active : ''}`}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                <span className={styles.navLine} aria-hidden="true" />
+                <span className={styles.navLabel}>{navItem.label}</span>
+              </Link>
+            </motion.div>
+          )
+        })}
       </motion.nav>
 
       {/* Socials + Availability */}
@@ -121,7 +119,7 @@ export default function LeftPanel({ activeSection }) {
 
           {/* LinkedIn */}
           <a
-            href="https://linkedin.com/in/darshi-sai-pranay-410b51225"
+            href="https://www.linkedin.com/in/darshi-sai-pranay-410b51225/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
