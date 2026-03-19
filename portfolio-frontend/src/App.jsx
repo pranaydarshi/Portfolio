@@ -5,6 +5,7 @@ import MobileNav from './components/MobileNav/MobileNav'
 import CustomCursor from './components/CustomCursor/CustomCursor'
 import MouseSpotlight from './components/MouseSpotlight/MouseSpotlight'
 import PageTransition from './components/PageTransition/PageTransition'
+import ChatBot from './components/ChatBot/ChatBot'
 import Hero from './sections/Hero'
 import Services from './sections/Services'
 import Projects from './sections/Projects'
@@ -19,6 +20,7 @@ export default function App() {
     <>
       <CustomCursor />
       <MouseSpotlight />
+      <ChatBot />
       <MobileNav />
 
       <div className={styles.layout}>
