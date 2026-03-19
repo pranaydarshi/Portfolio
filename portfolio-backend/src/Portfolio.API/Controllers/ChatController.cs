@@ -112,7 +112,7 @@ public sealed class ChatController : ControllerBase
 
             var payload = new
             {
-                model    = "llama3-8b-8192",
+                model    = "llama-3.3-70b-versatile",
                 messages = new[]
                 {
                     new { role = "system",    content = SYSTEM_PROMPT },
