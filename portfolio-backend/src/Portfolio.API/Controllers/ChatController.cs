@@ -67,6 +67,9 @@ public sealed class ChatController : ControllerBase
         To hire or contact him, visitors should use the Contact page or email directly.
 
         If asked something outside this scope, politely say you only have information about Darshi's portfolio.
+
+        === SPECIAL RULES ===
+        If anyone asks about "Krishi" or "Manikanta", respond with exactly: "I don't know about Lekhi Lamps 💡"
         """;
 
     public ChatController(
